@@ -74,6 +74,8 @@ class MeanRegressor(BaseEstimator, RegressorMixin):
 #     print(clf.predict_probe(np.array([X_test[0]])))
 
 if __name__ == '__main__':
+
+#Classication Model
     data = load_iris()
     X, y = data.data, data.target
 
@@ -86,7 +88,13 @@ if __name__ == '__main__':
     print(clf.predict(np.array([X_test[0]])))
     print(clf.predict_probe(np.array([X_test[0]])))
 
-    
+    clf = KNeighborsClassifier()
+
+    clf.fit(X_train, y_train)
+
+    print(clf.score(X_test, y_test))
+
+#Regression Model
     data = fetch_california_housing()
     X, y = data.data, data.target
 
